@@ -11,3 +11,22 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "cocktails";
+@import "doses";
+
+body {
+  background-color: #1B091D;
+}
+
+h1 {
+  font-family: 'Italianno', cursive;
+  font-size: 150px;
+  line-height: 0.8;
+}
+
+a {
+  color: white;
+  &:hover {
+  text-decoration: none;
+  }
+}
