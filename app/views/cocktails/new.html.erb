@@ -1,4 +1,11 @@
-<%= simple_form_for @cocktail do |f| %>
-  <%= f.input :name %>
+<div class="home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/1283219/pexels-photo-1283219.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)">
+  <h1>Create a new cocktail</h1>
+</div>
+<div class="container">
+  <%= simple_form_for @cocktail do |f| %>
+  <%= f.input :name, placeholder: 'Name' %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit %>
 <% end %>
+</div>
+
