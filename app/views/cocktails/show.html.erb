@@ -1,4 +1,4 @@
-<div class="home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(‘<%= cl_image_path @cocktail.photo%>’)">
+<div class="home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(‘<%= cl_image_tag @cocktail.photo.key, crop: :fill %>’)">
 <%= @cocktail.name %>
 </div>
 <ul>
