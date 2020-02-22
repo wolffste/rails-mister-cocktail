@@ -1,16 +1,20 @@
-<div class="home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(‘<%= cl_image_tag @cocktail.photo.key, crop: :fill %>’)">
-<%= @cocktail.name %>
+<div class="home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @cocktail.photo.key, crop: :fill %>’)">
+  <h1><%= @cocktail.name %></h1>
 </div>
-<ul>
+<div class="container">
+  <ul>
   <% @cocktail.doses.each do |d| %>
     <li>
-      <%= d.ingredient.name %>,
-      <%= d.description %>
-
-
-      <%= link_to "Delete", d,  method: :delete, data: { confirm: 'Are you sure?' } %>
+      <p><%= d.ingredient.name %>, <%= d.description %>
+        <%= link_to "Delete", d,  method: :delete, data: { confirm: 'Are you sure?' } %>
+      </p>
     </li>
     <% end %>
 </ul>
+<br>
+<%= link_to "Add Ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-ghost" %>
+<%= link_to "Back", cocktails_path(@cocktails), class: "btn btn-ghost" %>
+</div>
 
-<%= link_to "Add/Edit Ingredients", new_cocktail_dose_path(@cocktail) %>
+
+
